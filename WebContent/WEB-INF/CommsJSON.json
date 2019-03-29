@@ -1,0 +1,43 @@
+{
+	"meta" : {
+		"action" : "createPet"
+	},
+	"body" : [{
+		"name" : "PetName1",
+		"birthday" : "13-Jan",
+		"owner_name" : "Sriram"
+	}]
+}
+/*
+{
+	"meta" : {
+		"action" : "getAllOwners"
+	},
+	"body" : [{
+		"firstname" : "Owner1",
+		"lastname" : "last1",
+		"city" : "bangalore",
+		"pet_id" : "2"
+	}, {
+		"firstname" : "Owner2",
+		"lastname" : "last2",
+		"city" : "chennai",
+		"pet_id" : "2"
+	}]
+}
+
+{
+	"meta" : {
+		"action" : "getAllPets"
+	},
+	"body" : [{
+		"name" : "PetName1",
+		"birthday" : "13-Jan",
+		"owner_id" : "1"
+	}, {
+		"name" : "PetName1",
+		"birthday" : "13-Jan",
+		"owner_id" : "1"
+	}]
+}
+*/

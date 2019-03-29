@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>I will get data for you! Dont worry</title>
+<script>
+function getRestDataUsingGet(obj) {
+	var httpReq = new XMLHttpRequest();
+	httpReq.open("GET", "/RestUsingServletApp/api/vegetech/"+obj.id,true);
+	httpReq.onreadystatechange = function() {
+		if (httpReq.readyState == 4 && httpReq.status == 200) {
+			var simple = httpReq.responseText;
+			document.getElementById('AllData').innerHTML=simple;
+		}
+	}
+	httpReq.send();
+}
+</script>
+</head>
+<body>
+
+Click the options below perform the appropriate actions<br><br>
+<input type="button" id="owners" value="GetOwners" onclick="getRestDataUsingGet(this)"></input><br>
+--------------------------------------------------------------------<br>
+<input type="button" id="pets" value="GetPets" onclick="getRestDataUsingGet(this)"></input><br>
+--------------------------------------------------------------------<br>
+<form action="/RestUsingServletApp/api/vegetech/createPet" method="Post">
+<br>
+Enter Pet Name:<br>
+<input type="text" id="PetName" name="PetName"></input><br>
+Enter Owner Name:<br>
+<input type="text" id="OwnerName" name="OwnerName"></input><br>
+Enter Pet Birthday:<br>
+<input type="text" id="Birthdate" name="Birthdate"></input><br>
+Submit Data<br>
+<input type="submit" id="CreatePet" value="Create Pet"></input>
+</form>
+--------------------------------------------------------------------<br>
+Data from Server<br>
+--------------------------------------------------------------------<br>
+<div id="AllData">
+</div>
+--------------------------------------------------------------------<br>
+</body>
+</html>
